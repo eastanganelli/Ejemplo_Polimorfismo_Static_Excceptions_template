@@ -10,7 +10,7 @@ Triangulo::~Triangulo() {
 
 float Triangulo::area() {
 
-    longLados::iterator Laditos;
+    std::array<float, 3>::iterator Laditos;
 
     float acum = 0;
     int i = 0;
@@ -28,7 +28,7 @@ float Triangulo::area() {
 
 float Triangulo::perimetro() {
 
-    longLados::iterator Laditos;
+    std::array<float, 3>::iterator Laditos;
 
     float acum = 0;
     int i = 0;
