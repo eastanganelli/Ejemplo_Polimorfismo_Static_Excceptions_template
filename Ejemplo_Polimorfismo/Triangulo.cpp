@@ -9,12 +9,35 @@ Triangulo::~Triangulo() {
 }
 
 float Triangulo::area() {
-    return (float)(0.0f);
+
+    longLados::iterator Laditos;
+
+    float acum = 0;
+    int i = 0;
+    float semi_perimetro = 0;
+
+    for (Laditos = longLados.begin(); Laditos != longLados.end(); Laditos++, i++)
+    {
+        acum += Laditos[i];
+    }
+    semi_perimetro = acum / 2;
+
+    return (float)(floor(sqrt(semi_perimetro * (semi_perimetro - longLados[0]) * (semi_perimetro - longLados[1]) * (semi_perimetro - longLados[2]))));
 }
 
 
 float Triangulo::perimetro() {
-    return (float)(0.0f);
+
+    longLados::iterator Laditos;
+
+    float acum = 0;
+    int i = 0;
+
+    for (Laditos = longLados.begin(); Laditos != longLados.end(); Laditos++, i++) 
+    {
+            acum += Laditos[i];
+    }
+    return (floor(acum));
 }
 
 std::string Triangulo::to_string() {
