@@ -47,7 +47,7 @@ float Calculadora::dvidir(float valor1, float valor2) {
         if (valor2 == 0)
             throw valor2;
     }
-    catch (
+    catch ()
     {
         std::cout << "se intento dividir por 0";
     }
