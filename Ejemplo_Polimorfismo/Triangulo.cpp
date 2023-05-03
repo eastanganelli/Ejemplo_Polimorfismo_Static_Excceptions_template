@@ -9,12 +9,14 @@ Triangulo::~Triangulo() {
 }
 
 float Triangulo::area() {
-    return (float)(0.0f);
+    float s = Triangulo::perimetro() / 2;
+    return (float)sqrt(s * (s - this->longLados[0]) * (s - this->longLados[1]) * (s - this->longLados[2]));
 }
 
 
 float Triangulo::perimetro() {
-    return (float)(0.0f);
+   float per= this->longLados[0] + this->longLados[1] + this->longLados[2];
+    return per;
 }
 
 std::string Triangulo::to_string() {

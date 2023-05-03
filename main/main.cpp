@@ -55,6 +55,8 @@ int main() {
 	// Ejemplo usando una template como propiedad de atributo
 	foo Ejemplo("pepe", "31/05/1995");
 	Ejemplo.imprimir();
-
+	float p = 0;
+	float valor1 = 3, valor2 = 0;
+	miCalduladora.dvidir(valor1, valor2);
 	return 0;
 }
