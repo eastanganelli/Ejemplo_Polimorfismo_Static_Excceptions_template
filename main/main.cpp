@@ -40,7 +40,7 @@ int main() {
 		}
 	}
 
-	try
+	try 
 	{
 		float a = Calculadora::dvidir(1, 9);
 		float b = Calculadora::dvidir(1, 0);
