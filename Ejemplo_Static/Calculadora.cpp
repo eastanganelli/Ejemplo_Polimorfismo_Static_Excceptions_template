@@ -40,5 +40,7 @@ float Calculadora::multiplicar(float valor1, float valor2) {
 
 
 float Calculadora::dvidir(float valor1, float valor2) {
+  if (valor2 == 0) throw new std::exception("Div por cero ");
+     
     return ( valor1 / valor2 );
 }

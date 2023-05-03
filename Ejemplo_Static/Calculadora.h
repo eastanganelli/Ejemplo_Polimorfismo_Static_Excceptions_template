@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 
+
 class Calculadora
 {
 	const std::string nombre;

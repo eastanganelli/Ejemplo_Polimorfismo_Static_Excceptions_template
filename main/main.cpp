@@ -18,10 +18,13 @@ using namespace std;
 
 int main() {
 	stack<Figura*> misFiguras;
+	std:: array<float, 3>ArrA = { 60,90,65 };
+	std::array<float, 3> ArrL={ 1.75,2.1,1.5 };
 
 	misFiguras.push(new Cuadrado(4.56));
 	misFiguras.push(new Circulo(8.08));
 	misFiguras.push(new Cuadrado(3.22));
+	misFiguras.push(new Triangulo(ArrA, ArrL));
 
 	// Ejemplo de Polimorfismo y dynamic_cast<>
 	while (!(misFiguras.empty())) {
@@ -35,6 +38,17 @@ int main() {
 		} else if (dynamic_cast<Triangulo*>(aux) != nullptr) {
 			dynamic_cast<Triangulo*>(aux)->imprimir();
 		}
+	}
+
+	try
+	{
+		float a = Calculadora::dvidir(1, 9);
+		float b = Calculadora::dvidir(1, 0);
+
+	}
+	catch (exception e)
+	{
+
 	}
 
 	// Ahora jugaremos con Static
