@@ -9,12 +9,23 @@ Triangulo::~Triangulo() {
 }
 
 float Triangulo::area() {
-    return (float)(0.0f);
+    // float s = longLados[0] + longLados[1] + longLados[2];
+    float s = this-> perimetro();
+    float area = sqrt(s*(s-longLados[0]+ s - longLados[1]+ s - longLados[2]));
+  
+    return area;
 }
 
 
 float Triangulo::perimetro() {
-    return (float)(0.0f);
+
+    float perimetro = 0;
+    int i = 0;
+    for (i = 0; i < 3; i++)
+    {
+        perimetro = longLados[i]+perimetro;
+    }
+    return perimetro;
 }
 
 std::string Triangulo::to_string() {

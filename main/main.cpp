@@ -56,5 +56,15 @@ int main() {
 	foo Ejemplo("pepe", "31/05/1995");
 	Ejemplo.imprimir();
 
+	try {
+		cout << "5/5=" << Calculadora::dvidir(5,5) << endl;
+		cout << "5/0=" << Calculadora::dvidir(5,0) << endl;
+		cout << "15/3=" << Calculadora::dvidir(15, 3) << endl;
+	}
+	catch (exception &e) //asi es como levanto la excepcion. 
+	{
+		cerr << "Excepcion -> " << e.what();
+	}
+
 	return 0;
 }

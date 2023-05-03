@@ -40,5 +40,8 @@ float Calculadora::multiplicar(float valor1, float valor2) {
 
 
 float Calculadora::dvidir(float valor1, float valor2) {
+
+    if (valor2 == 0) throw std::exception("Division por zero"); // SI PONGO * TENDRIA QUE HACER DELETE Y EN EL CATCH PONER * EN VEZ DE &
+    
     return ( valor1 / valor2 );
 }
