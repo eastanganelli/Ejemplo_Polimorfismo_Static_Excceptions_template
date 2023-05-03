@@ -57,6 +57,18 @@ int main() {
 	Ejemplo.imprimir();
 	float p = 0;
 	float valor1 = 3, valor2 = 0;
-	miCalduladora.dvidir(valor1, valor2);
+	try {
+		if (valor2 != 0)
+			p = miCalduladora.dvidir(valor1, valor2);
+		else
+			throw "ha ocurrido una division por 0";
+	}
+	catch (...) {
+		std::cout << "ha ocurrido una division por 0";
+
+	}
+	
 	return 0;
 }
+ 
+   
