@@ -1,4 +1,5 @@
 #include "Triangulo.h"
+using namespace std;
 
 Triangulo::Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_) : Figura(3) {
     this->angulos = angulos_;
@@ -9,12 +10,27 @@ Triangulo::~Triangulo() {
 }
 
 float Triangulo::area() {
-    return (float)(0.0f);
+    int i;
+    float Area = 0;
+    float S=0;
+    for(i=0; i< 3; i++){ //recorro el array
+        S = S+longLados[i];
+    }
+    S=S/2;
+    Area= sqrt(S*(S-longLados[0])*(S-longLados[1])*(S-longLados[2]));
+    return Area;
 }
 
 
 float Triangulo::perimetro() {
-    return (float)(0.0f);
+    float Perimetro = 0;
+    int i = 0;
+    for(i=0; i< 3; i++){ //recorro el array
+        Perimetro = Perimetro + longLados[i];
+    }
+
+
+    return Perimetro;
 }
 
 std::string Triangulo::to_string() {

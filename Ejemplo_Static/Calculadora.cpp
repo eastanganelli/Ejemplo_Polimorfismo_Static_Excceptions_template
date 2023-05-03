@@ -40,5 +40,13 @@ float Calculadora::multiplicar(float valor1, float valor2) {
 
 
 float Calculadora::dvidir(float valor1, float valor2) {
-    return ( valor1 / valor2 );
+    if (valor2 == 0)
+        throw "Div_Zero";
+
+    float division = 0;
+    division = valor1 / valor2;
+
+
+
+    return division;
 }

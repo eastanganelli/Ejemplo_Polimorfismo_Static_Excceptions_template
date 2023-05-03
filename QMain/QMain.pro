@@ -30,9 +30,7 @@ HEADERS += \
     ../Ejemplo_Polimorfismo/Cuadrado.h \
     ../Ejemplo_Polimorfismo/Figura.h \
     ../Ejemplo_Polimorfismo/Triangulo.h \
-    ../Ejemplo_Polimorfismo/framework.h \
     ../Ejemplo_Static/Calculadora.h \
-    ../Ejemplo_Static/framework.h \
     ../Ejemplo_Template/foo.h \
     ../Ejemplo_Template/framework.h \
     ../Ejemplo_Template/propiedad.h
