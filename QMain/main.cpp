@@ -37,7 +37,7 @@ int main() {
 		}
 	}
 
-	// Ahora jugaremos con Static
+    // Ahora jugaremos con Static
 	Calculadora miCalduladora("Casio", "MD5682");
 
 	Cuadrado miCuadrado(4.56);
@@ -48,6 +48,20 @@ int main() {
 	valoresAsumar.push(miCirculo.area());
 
 	cout << "Area de Cuadrado + Circulo = " << Calculadora::sumar(valoresAsumar) << endl;
+
+    try
+    {
+        Calculadora::dvidir(3,8);
+        Calculadora::dvidir(4,2);
+        Calculadora::dvidir(3,0);
+
+    }
+
+    catch(exception *e)
+    {
+        cout << e->what();
+        delete e;
+    }
 
 	// Imprimir datos de la calculadora
 	miCalduladora.imprimir();
