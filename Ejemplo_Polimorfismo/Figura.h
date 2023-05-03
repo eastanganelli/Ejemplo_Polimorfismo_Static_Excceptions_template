@@ -6,6 +6,8 @@
 #include <sstream>
 #include <iostream>
 
+// Porfa para la porxima poner una c adelante del nombre de cada clase
+// cFigura
 class Figura {
 protected:
 	const unsigned int cantLados;

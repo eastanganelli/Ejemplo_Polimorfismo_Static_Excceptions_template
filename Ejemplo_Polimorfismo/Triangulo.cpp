@@ -1,5 +1,7 @@
 #include "Triangulo.h"
 
+// Se asume que el triangulo creado es posible
+
 Triangulo::Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_) : Figura(3) {
     this->angulos = angulos_;
     this->longLados = longLados_;
@@ -9,12 +11,26 @@ Triangulo::~Triangulo() {
 }
 
 float Triangulo::area() {
-    return (float)(0.0f);
+    int i = 0;
+    float area = 0.0;
+    float semiPer = 0.0;
+
+    for (i = 0;i<longLados.size(); i++) {
+        semiPer += longLados[i];
+    }
+    semiPer /= 2;
+    area = sqrt( semiPer*(semiPer-longLados[0])*(semiPer-longLados[1])*(semiPer-longLados[2]) );
+
+    return (float)(area);
 }
 
-
+// Asumo que nada de longLados esta en NULL y que ninguno es negativo
 float Triangulo::perimetro() {
-    return (float)(0.0f);
+    float per = 0.0;
+    for (int i = 0; i<longLados.size(); i++) {
+        per += longLados[i];
+    }
+    return (float)(per);
 }
 
 std::string Triangulo::to_string() {

@@ -16,6 +16,6 @@ public:
 	static float sumar(std::stack<float> valores);
 	static float restar(float valor1, float valor2);
 	static float multiplicar(float valor1, float valor2);
-	static float dvidir(float valor1, float valor2);
+	static float dividir(float valor1, float valor2);
 };
 
