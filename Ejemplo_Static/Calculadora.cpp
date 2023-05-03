@@ -40,5 +40,16 @@ float Calculadora::multiplicar(float valor1, float valor2) {
 
 
 float Calculadora::dvidir(float valor1, float valor2) {
-    return ( valor1 / valor2 );
+   
+    try
+    {
+
+        if (valor2 == 0)
+            throw valor2;
+    }
+    catch (
+    {
+        std::cout << "se intento dividir por 0";
+    }
+    return 0;
 }

@@ -56,5 +56,8 @@ int main() {
 	foo Ejemplo("pepe", "31/05/1995");
 	Ejemplo.imprimir();
 
+	
+
+
 	return 0;
 }
