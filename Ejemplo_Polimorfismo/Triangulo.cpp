@@ -51,3 +51,5 @@ std::string Triangulo::to_string() {
 void Triangulo::imprimir() {
     std::cout << this->to_string() << std::endl;
 }
+
+
