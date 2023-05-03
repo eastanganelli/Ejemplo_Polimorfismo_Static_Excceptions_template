@@ -1,13 +1,17 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include <array>
+#include<list>
+#include <cmath>
 
 #include "Figura.h"
+
 
 /*
 * Ayuda para el Triiangulo
 * Link: https://www.canva.com/design/DAFh3k11soY/28zLa3AK-Hapiz5IK22_AQ/view?utm_content=DAFh3k11soY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
-* Alacración: el triángulo puede ser equilatero, isoceles o escaleno
-* Solo se clasifica según sus lados
+* Alacraciï¿½n: el triï¿½ngulo puede ser equilatero, isoceles o escaleno
+* Solo se clasifica segï¿½n sus lados
 */
 
 class Triangulo : public Figura {

@@ -2,16 +2,17 @@
 #include <stack>
 #include <vector>
 #include <algorithm>
+#include <array>
 
-// Inclusión de .h de Polimorfismo
+// Inclusiï¿½n de .h de Polimorfismo
 #include "../Ejemplo_Polimorfismo/Circulo.h"
 #include "../Ejemplo_Polimorfismo/Cuadrado.h"
 #include "../Ejemplo_Polimorfismo/Triangulo.h"
 
-// Inlusión de .h de Static Ejemplo
+// Inlusiï¿½n de .h de Static Ejemplo
 #include "../Ejemplo_Static/Calculadora.h"
 
-// Inlusión de .h de Template
+// Inlusiï¿½n de .h de Template
 #include "../Ejemplo_Template/foo.h"
 
 using namespace std;
@@ -55,6 +56,16 @@ int main() {
 	// Ejemplo usando una template como propiedad de atributo
 	foo Ejemplo("pepe", "31/05/1995");
 	Ejemplo.imprimir();
+
+	// Prueba de perimtro y area de triangulo
+
+	std::array<float, 3> ListaLados = {10, 10, 10};
+
+	std::array<float, 3> ListaAngulos = { 60, 60, 60 };
+
+	Triangulo miTriangulo(ListaAngulos, ListaLados);
+
+	miTriangulo.imprimir();
 
 	return 0;
 }
