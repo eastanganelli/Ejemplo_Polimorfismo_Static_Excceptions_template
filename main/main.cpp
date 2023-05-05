@@ -23,6 +23,11 @@ int main() {
 	misFiguras.push(new Circulo(8.08));
 	misFiguras.push(new Cuadrado(3.22));
 
+
+	array<float, 3> angulos_ = { 90.0, 45.0, 45.0 };		//hago esto para probar que funcione
+	array<float, 3> lados_ = { 3.0,5.0,4.0 };				//hago esto para probar que funcione
+	misFiguras.push(new Triangulo(angulos_, lados_));
+
 	// Ejemplo de Polimorfismo y dynamic_cast<>
 	while (!(misFiguras.empty())) {
 		Figura* aux = misFiguras.top();

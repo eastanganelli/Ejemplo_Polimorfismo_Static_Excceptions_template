@@ -2,6 +2,7 @@
 #include <array>
 
 #include "Figura.h"
+#include <cmath>
 
 /*
 * Ayuda para el Triiangulo
