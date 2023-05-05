@@ -1,6 +1,6 @@
 #pragma once
 #include <array>
-
+#include <cmath>
 #include "Figura.h"
 
 /*
@@ -10,15 +10,51 @@
 * Solo se clasifica según sus lados
 */
 
-class Triangulo : public Figura {
-    std::array<float, 3> angulos;
-    std::array<float, 3> longLados;
+template<typename T> class Triangulo : public Figura<T> {
+    std::array<T, 3> angulos;
+    std::array<T, 3> longLados;
 public:
-    Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_);
+    Triangulo(std::array<T, 3> angulos_, std::array<T, 3> longLados_);
+
     ~Triangulo();
-    float area();
-    float perimetro();
+
+    T area();
+    T perimetro();
     std::string to_string();
     void imprimir();
 };
+template<typename T>
+inline Triangulo<T>::Triangulo(std::array<T, 3> angulos_, std::array<T, 3> longLados_) : Figura(3) {
+    this->angulos = angulos_;
+    this->longLados = longLados_;
+}
+template<typename T>
+inline Triangulo<T>::~Triangulo() {
+}
+template<typename T>
+inline T Triangulo<T>::area() {
+    float area = 0.0;
+    float Perimetro = perimetro();
+    float s = Perimetro / 2;
+    area = sqrt(s * (s - longLados[0]) * (s - longLados[1]) * (s - longLados[2]));
 
+    return area;
+}
+
+template<typename T>
+inline T Triangulo<T>::perimetro() {
+    T perimetro = longLados[0] + longLados[1] + longLados[2];
+    return perimetro;
+}
+template<typename T>
+inline std::string Triangulo<T>::to_string() {
+    std::stringstream salida;
+    salida << "Triangulo de lado con longitud: " << this->longLados[0] << " - " << this->longLados[1] << " " << this->longLados[2]
+        << std::endl << "Con angulos: " << this->angulos[0] << " - " << this->angulos[1] << " " << this->angulos[2]
+        << std::endl << "Perimetro: " << this->perimetro() << std::endl << "Area: " << this->area() << std::endl;
+    return salida.str();
+}
+template<typename T>
+inline void Triangulo<T>::imprimir() {
+    std::cout << this->to_string() << std::endl;
+}
