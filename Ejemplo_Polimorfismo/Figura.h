@@ -10,7 +10,6 @@ template <typename T> class Figura {
 protected:
 	const unsigned int cantLados;
 public:
-	template <typename T>
 	Figura(uint cantLados_);
 	~Figura();
 	virtual T area() = 0;
@@ -18,3 +17,10 @@ public:
 	virtual std::string to_string() = 0;
 	virtual void imprimir() = 0;
 };
+template <typename T>
+inline Figura<T>::Figura(uint cantLados_) : cantLados(cantLados_) {
+}
+
+template <typename T>
+inline Figura<T>::~Figura() {
+}
