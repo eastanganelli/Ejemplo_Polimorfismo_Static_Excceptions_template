@@ -59,7 +59,7 @@ int main() {
 		float number = Calculadora::dividir(3.0, 0.0);
 	}
 	catch (exception& e) {
-
+		cout << "Division por cero" << endl;
 	}
 	// Ejemplo usando una template como propiedad de atributo
 	foo Ejemplo("pepe", "31/05/1995");
