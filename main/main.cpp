@@ -31,8 +31,8 @@ int main() {
 			dynamic_cast<Cuadrado*>(aux)->imprimir();
 		} else if (dynamic_cast<Circulo*>(aux) != nullptr) {
 			dynamic_cast<Circulo*>(aux)->imprimir();
-		} else if (dynamic_cast<Triangulo*>(aux) != nullptr) {
-			dynamic_cast<Triangulo*>(aux)->imprimir();
+		} else if (dynamic_cast<Triangulo<float>*>(aux) != nullptr) {
+			dynamic_cast<Triangulo<float>*>(aux)->imprimir();
 		}
 	}
 
@@ -54,6 +54,22 @@ int main() {
 	// Ejemplo usando una template como propiedad de atributo
 	foo Ejemplo("pepe", "31/05/1995");
 	Ejemplo.imprimir();
+
+	/*array < float, 3> a = { 30.1,60.4,90.5 };
+	array<float, 3> b = { 2.5,6.4,2.1 };
+	template <typename T> 
+	Triangulo<T> miTriangulo(a, b);*/
+	
+	try {
+		Calculadora::dividir(1, 2);
+		Calculadora::dividir(3, 0);
+		Calculadora::dividir(1, 4);
+	}
+
+	catch(exception & e) {
+		cout << "ocurrio excepcion " << e.what() << endl;
+		
+	}
 
 	return 0;
 }
