@@ -10,15 +10,17 @@
 * Solo se clasifica según sus lados
 */
 
-class Triangulo : public Figura {
-    std::array<float, 3> angulos;
-    std::array<float, 3> longLados;
+template <typename T> class Triangulo {
+
+    std::array<T, 3> angulos;
+    std::array<T, 3> longLados;
 public:
-    Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_);
+    Triangulo(std::array<T, 3> angulos_, std::array<T, 3> longLados_);
     ~Triangulo();
-    float area();
-    float perimetro();
+    T area();
+    T perimetro();
     std::string to_string();
     void imprimir();
 };
+
 

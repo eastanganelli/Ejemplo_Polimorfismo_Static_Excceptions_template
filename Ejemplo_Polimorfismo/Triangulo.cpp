@@ -1,23 +1,27 @@
 #include "Triangulo.h"
-
-Triangulo::Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_) : Figura(3) {
+template <typename T>
+Triangulo<T>::Triangulo (std::array<T, 3> angulos_, std::array<T, 3> longLados_) : Figura(3) {
     this->angulos = angulos_;
     this->longLados = longLados_;
 }
 
-Triangulo::~Triangulo() {
+template <typename T>
+Triangulo<T>::~Triangulo() {
 }
 
-float Triangulo::area() {
-    return (float)(0.0f);
+template <typename T>
+T Triangulo<T>::perimetro() {
+    return (T)(floor((this->cantLados) * ((this->longLados[0]) + (this->longLados[1]) + (this->longLados[2])) * 100.0) / 100.0);
 }
 
-
-float Triangulo::perimetro() {
-    return (float)(0.0f);
+template <typename T>
+T Triangulo<T>::area() {
+    float s = (this->perimetro()) / 2;
+    return (float)(sqrt(s * (s - longLados[0]) * (s - longLados[1]) * (s - longLados[2])));
 }
 
-std::string Triangulo::to_string() {
+template <typename T>
+std::string Triangulo<T>::to_string() {
     std::stringstream salida;
     salida << "Triangulo de lado con longitud: " << this->longLados[0] << " - " << this->longLados[1] << " " << this->longLados[2]
            << std::endl << "Con angulos: " << this->angulos[0] << " - " << this->angulos[1] << " " << this->angulos[2]
@@ -25,6 +29,7 @@ std::string Triangulo::to_string() {
     return salida.str();
 }
 
-void Triangulo::imprimir() {
+template <typename T>
+void Triangulo<T>::imprimir() {
     std::cout << this->to_string() << std::endl;
 }
