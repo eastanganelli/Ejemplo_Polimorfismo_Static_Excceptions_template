@@ -10,7 +10,7 @@ Triangulo::~Triangulo() {
 
 float Triangulo::area() {               // area = 0.5 * l1 * l2 * sen (B)
     float are = 0.0;
-    are = 0.5 * longLados[0] * longLados[2] * sin(angulos[0]);
+    are = (float)(0.5 * longLados[0] * longLados[2] * sin(angulos[0]));
     return are;
 }
 
@@ -18,7 +18,7 @@ float Triangulo::area() {               // area = 0.5 * l1 * l2 * sen (B)
 float Triangulo::perimetro() {
     float perim = 0.0;
     for (int i = 0; i < 3; i++) {
-        perim += longLados[i];
+        perim += (float)longLados[i];
     }
     return perim;
 }
