@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-
+#include <exception>
 class Calculadora
 {
 	const std::string nombre;

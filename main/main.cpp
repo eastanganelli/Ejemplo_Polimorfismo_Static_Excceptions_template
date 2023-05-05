@@ -15,38 +15,54 @@
 #include "../Ejemplo_Template/foo.h"
 
 using namespace std;
-
+template <typename T>
 int main() {
-	stack<Figura*> misFiguras;
+	stack<Figura<float>*> misFiguras;
 
-	misFiguras.push(new Cuadrado(4.56));
-	misFiguras.push(new Circulo(8.08));
-	misFiguras.push(new Cuadrado(3.22));
+	misFiguras.push(new Cuadrado<float>(4.56));
+	misFiguras.push(new Circulo<float>(8.08));
+	misFiguras.push(new Cuadrado<float>(3.22));
 
 	// Ejemplo de Polimorfismo y dynamic_cast<>
 	while (!(misFiguras.empty())) {
-		Figura* aux = misFiguras.top();
+		Figura<float>* aux = misFiguras.top();
 		misFiguras.pop();
-		if (dynamic_cast<Cuadrado*>(aux) != nullptr) {
-			dynamic_cast<Cuadrado*>(aux)->imprimir();
-		} else if (dynamic_cast<Circulo*>(aux) != nullptr) {
-			dynamic_cast<Circulo*>(aux)->imprimir();
-		} else if (dynamic_cast<Triangulo*>(aux) != nullptr) {
-			dynamic_cast<Triangulo*>(aux)->imprimir();
+		if (dynamic_cast<Cuadrado<float>*>(aux) != nullptr) {
+			dynamic_cast<Cuadrado<float>*>(aux)->imprimir();
+		} else if (dynamic_cast<Circulo<float>*>(aux) != nullptr) {
+			dynamic_cast<Circulo<float>*>(aux)->imprimir();
+		} else if (dynamic_cast<Triangulo<float>*>(aux) != nullptr) {
+			dynamic_cast<Triangulo<float>*>(aux)->imprimir();
 		}
 	}
 
 	// Ahora jugaremos con Static
 	// Calculadora miCalculadora("Casio", "MD5682");
 
-	Cuadrado miCuadrado(4.56);
-	Circulo miCirculo(8.08);
+	Cuadrado<float> miCuadrado(4.56);
+	Circulo<float> miCirculo(8.08);
 
 	stack<float> valoresAsumar;
 	valoresAsumar.push(miCuadrado.area());
 	valoresAsumar.push(miCirculo.area());
 
 	cout << "Area de Cuadrado + Circulo = " << Calculadora::sumar(valoresAsumar) << endl;
+	bool aux = false;
+	do{
+	float val1, val2;
+		cin >> val1;
+		cin >> val2;
+		try {
+			float result = Calculadora::dividir(val1, val2);
+		}
+		catch (exception&e) {
+	
+			cout << "No es posible la división por 0";
+			aux = true;
+		}
+	} while (aux);
+		
+	
 
 	// Imprimir datos de la calculadora
 	// miCalculadora.imprimir();

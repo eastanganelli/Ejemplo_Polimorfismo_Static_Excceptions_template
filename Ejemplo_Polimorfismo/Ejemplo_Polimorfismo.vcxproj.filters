@@ -24,10 +24,10 @@
     <ClInclude Include="Cuadrado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Triangulo.h">
+    <ClInclude Include="Circulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Circulo.h">
+    <ClInclude Include="Triangulo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
