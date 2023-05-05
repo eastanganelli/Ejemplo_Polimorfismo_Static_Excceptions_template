@@ -1,6 +1,6 @@
 #pragma once
 #include <array>
-
+#include <cmath>
 #include "Figura.h"
 
 /*
@@ -10,11 +10,13 @@
 * Solo se clasifica según sus lados
 */
 
+
+template<typename T>
 class Triangulo : public Figura {
-    std::array<float, 3> angulos;
-    std::array<float, 3> longLados;
+    std::array<T, 3> angulos;
+    std::array<T, 3> longLados;
 public:
-    Triangulo(std::array<float, 3> angulos_, std::array<float, 3> longLados_);
+    Triangulo(std::array<T, 3> angulos_, std::array<T, 3> longLados_);
     ~Triangulo();
     float area();
     float perimetro();
