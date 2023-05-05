@@ -1,4 +1,5 @@
 #include "Calculadora.h"
+#include <exception>
 
 
 Calculadora::Calculadora(std::string nombre_, std::string modelo_) : nombre(nombre_), modelo(modelo_) {
@@ -40,5 +41,8 @@ float Calculadora::multiplicar(float valor1, float valor2) {
 
 
 float Calculadora::dividir(float valor1, float valor2) {
+    if (valor2 == 0.0)
+        throw std::exception("Div_zero");
+
     return ( valor1 / valor2 );
 }
