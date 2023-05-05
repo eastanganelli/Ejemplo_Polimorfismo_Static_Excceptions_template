@@ -54,15 +54,15 @@ int main() {
 
 	// Ejemplo usando una template como propiedad de atributo
 
-	try {
+	
+	foo Ejemplo("pepe", "31/05/1995");
+	Ejemplo.imprimir();
+try {
 		float pepe = Calculadora::dividir(3, 0);
 	}
 	catch (exception& e) {
 		cout << "DIVISION POR 0";
 	}
-
-	foo Ejemplo("pepe", "31/05/1995");
-	Ejemplo.imprimir();
 
 	return 0;
 }
