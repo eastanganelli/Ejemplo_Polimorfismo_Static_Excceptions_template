@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Circulo.h" />
+    <ClInclude Include="cTemplateTriangulo.h" />
     <ClInclude Include="Cuadrado.h" />
     <ClInclude Include="Figura.h" />
     <ClInclude Include="framework.h" />
