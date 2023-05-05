@@ -1,14 +1,14 @@
 #pragma once
 #include "Figura.h"
-
+template <typename T>
 class Cuadrado : public Figura {
 
-	float longLado;
+	T longLado;
 public:
-	Cuadrado(float longLado_);
+	Cuadrado(T longLado_);
 	~Cuadrado();
-	float area();
-	float perimetro();
+	T area();
+	T perimetro();
 	std::string to_string();
 	void imprimir();
 };

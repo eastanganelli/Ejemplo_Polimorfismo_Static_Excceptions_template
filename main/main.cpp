@@ -15,7 +15,7 @@
 #include "../Ejemplo_Template/foo.h"
 
 using namespace std;
-
+template <typename T>
 int main() {
 	stack<Figura*> misFiguras;
 
@@ -47,6 +47,22 @@ int main() {
 	valoresAsumar.push(miCirculo.area());
 
 	cout << "Area de Cuadrado + Circulo = " << Calculadora::sumar(valoresAsumar) << endl;
+	bool aux = false;
+	do{
+	float val1, val2;
+		cin >> val1;
+		cin >> val2;
+		try {
+			float result = Calculadora::dividir(val1, val2);
+		}
+		catch (exception&e) {
+	
+			cout << "No es posible la división por 0";
+			aux = true;
+		}
+	}while(aux)
+		
+	
 
 	// Imprimir datos de la calculadora
 	// miCalculadora.imprimir();
