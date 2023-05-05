@@ -18,10 +18,17 @@ using namespace std;
 
 int main() {
 	stack<Figura*> misFiguras;
-
-	misFiguras.push(new Cuadrado(4.56));
+	//crear array de lados  y angulos para pasarselo al metodo
+	array <float, 3> lados;
+	lados[0] = 4;
+	lados[1] = 4;
+	lados[2] = 4;
+	//falta el array de angulos aca
+		misFiguras.push(new Cuadrado(4.56));
 	misFiguras.push(new Circulo(8.08));
 	misFiguras.push(new Cuadrado(3.22));
+	misFiguras.push(new Triangulo(lados,/*angulos*/));
+
 
 	// Ejemplo de Polimorfismo y dynamic_cast<>
 	while (!(misFiguras.empty())) {
@@ -31,8 +38,8 @@ int main() {
 			dynamic_cast<Cuadrado*>(aux)->imprimir();
 		} else if (dynamic_cast<Circulo*>(aux) != nullptr) {
 			dynamic_cast<Circulo*>(aux)->imprimir();
-		} else if (dynamic_cast<Triangulo*>(aux) != nullptr) {
-			dynamic_cast<Triangulo*>(aux)->imprimir();
+		} else if (dynamic_cast<Triangulo<float>*>(aux) != nullptr) {
+			dynamic_cast<Triangulo<float>*>(aux)->imprimir();
 		}
 	}
 
